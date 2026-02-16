@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Serafina 💙</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  background: #ffffffcc;
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 400px;
+}
+.hidden { display: none; }
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #93c5fd;
+  color: #1e3a8a;
+  font-size: 16px;
+  cursor: pointer;
+}
+.letter { font-size: 18px; color: #1e40af; }
+#error { color: #dc2626; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div id="step1">
+    <h2>What is our anniversary?</h2>
+    <input id="anniversary" placeholder="MM-DD-YY">
+    <br><br>
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="error"></p>
+  </div>
+
+  <div id="step2" class="hidden">
+    <p class="letter">Hello Beautiful Girl, let me ask you a question.</p>
+    <button onclick="showQuestion()">Next</button>
+  </div>
+
+  <div id="step3" class="hidden">
+    <h2>Will you be my date? 💕</h2>
+    <button onclick="yesAnswer()">Yes</button>
+    <button onclick="noAnswer()">No</button>
+    <p id="response"></p>
+  </div>
+</div>
+
+<script>
+function checkAnswer() {
+  if (anniversary.value === "01-25-25") {
+    step1.classList.add("hidden");
+    step2.classList.remove("hidden");
+  } else {
+    error.textContent = "Oops! Try again 💔";
+  }
+}
+function showQuestion() {
+  step2.classList.add("hidden");
+  step3.classList.remove("hidden");
+}
+function yesAnswer() {
+  response.textContent = "Yay! I can’t wait for our date 🥰💙";
+}
+function noAnswer() {
+  response.textContent = "Okay… but you’re still special to me 💙";
+}
+</script>
+
+</body>
+</html>
